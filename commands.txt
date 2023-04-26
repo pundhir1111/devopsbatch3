@@ -1,0 +1,14 @@
+Git Commands
+
+1. git init- ti initilize the directory 
+2. git status- To know the status of the file 
+3. git add filename - to move the file from filesystem to staging area where we can track the files on VCS. 
+4. git commit -m "first commit" - commit the file form staging area to VCS. 
+5. git log - To check the information about file info.
+	commit_hash
+	Auther
+	Date
+6. git restore filename - to restore the deleted file from VCS to to file system.
+7. git diff- To check the difference in the of the file on VCS, if any modification is there it will show the difference.
+8.
+
