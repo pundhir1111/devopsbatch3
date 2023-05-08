@@ -1,1 +1,483 @@
 This is the devops batch 3 repository.
+
+
+pundh@LAPTOP-T5AVFFFQ MINGW64 ~/Downloads
+$ ssh -i "my_linux_server.pem" ubuntu@ec2-3-86-212-205.compute-1.amazonaws.com
+The authenticity of host 'ec2-3-86-212-205.compute-1.amazonaws.com (3.86.212.205)' can't be established.
+ED25519 key fingerprint is SHA256:l418/8aBjAGYVZrvZqt09qjXupTzJMZ2elhziseCgjc.
+This key is not known by any other names
+Are you sure you want to continue connecting (yes/no/[fingerprint])? Y
+Please type 'yes', 'no' or the fingerprint: yes
+Warning: Permanently added 'ec2-3-86-212-205.compute-1.amazonaws.com' (ED25519) to the list of known hosts.
+Welcome to Ubuntu 22.04.2 LTS (GNU/Linux 5.15.0-1031-aws x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Thu May  4 15:55:08 UTC 2023
+
+  System load:  0.0703125         Processes:             105
+  Usage of /:   20.4% of 7.57GB   Users logged in:       1
+  Memory usage: 21%               IPv4 address for eth0: 172.31.86.219
+  Swap usage:   0%
+
+
+Expanded Security Maintenance for Applications is not enabled.
+
+0 updates can be applied immediately.
+
+Enable ESM Apps to receive additional future security updates.
+See https://ubuntu.com/esm or run: sudo pro status
+
+
+The list of available updates is more than a week old.
+To check for new updates run: sudo apt update
+
+Last login: Thu May  4 15:53:40 2023 from 18.206.107.27
+To run a command as administrator (user "root"), use "sudo <command>".
+See "man sudo_root" for details.
+
+ubuntu@ip-172-31-86-219:~$ mkdir devops-batch-3
+ubuntu@ip-172-31-86-219:~$ mkdir devops-batch-3
+mkdir: cannot create directory ‘devops-batch-3’: File exists
+ubuntu@ip-172-31-86-219:~$ cd devops-batch-3
+ubuntu@ip-172-31-86-219:~/devops-batch-3$ git init
+hint: Using 'master' as the name for the initial branch. This default branch name
+hint: is subject to change. To configure the initial branch name to use in all
+hint: of your new repositories, which will suppress this warning, call:
+hint:
+hint:   git config --global init.defaultBranch <name>
+hint:
+hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+hint: 'development'. The just-created branch can be renamed via this command:
+hint:
+hint:   git branch -m <name>
+Initialized empty Git repository in /home/ubuntu/devops-batch-3/.git/
+ubuntu@ip-172-31-86-219:~/devops-batch-3$ git ststus
+git: 'ststus' is not a git command. See 'git --help'.
+
+The most similar command is
+        status
+ubuntu@ip-172-31-86-219:~/devops-batch-3$ git status
+On branch master
+
+No commits yet
+
+nothing to commit (create/copy files and use "git add" to track)
+ubuntu@ip-172-31-86-219:~/devops-batch-3$ vim feature-1.txt
+ubuntu@ip-172-31-86-219:~/devops-batch-3$ git config-global user.name "pundhir1111@gmail.com"
+git: 'config-global' is not a git command. See 'git --help'.
+ubuntu@ip-172-31-86-219:~/devops-batch-3$ git config --global user.name "pundhir1111@gmail.com"
+ubuntu@ip-172-31-86-219:~/devops-batch-3$ git config --global user.email "pundhir1111@gmail.com"
+ubuntu@ip-172-31-86-219:~/devops-batch-3$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        feature-1.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+ubuntu@ip-172-31-86-219:~/devops-batch-3$ git remote -v
+ubuntu@ip-172-31-86-219:~/devops-batch-3$ git add .
+ubuntu@ip-172-31-86-219:~/devops-batch-3$ git commit -m "add feature1"
+[master (root-commit) 9540413] add feature1
+ 1 file changed, 1 insertion(+)
+ create mode 100644 feature-1.txt
+ubuntu@ip-172-31-86-219:~/devops-batch-3$ vim feature2.txt
+ubuntu@ip-172-31-86-219:~/devops-batch-3$ git add .
+ubuntu@ip-172-31-86-219:~/devops-batch-3$ git commit -m "added freture2"
+[master 56b846e] added freture2
+ 1 file changed, 1 insertion(+)
+ create mode 100644 feature2.txt
+ubuntu@ip-172-31-86-219:~/devops-batch-3$ git log
+commit 56b846eebea5543411f66e31d3836cb000bb5c25 (HEAD -> master)
+Author: pundhir1111@gmail.com <pundhir1111@gmail.com>
+Date:   Thu May 4 16:00:32 2023 +0000
+
+    added freture2
+
+commit 95404134199014bcc7c9512ff993b35ab843a21c
+Author: pundhir1111@gmail.com <pundhir1111@gmail.com>
+Date:   Thu May 4 15:59:45 2023 +0000
+
+    add feature1
+ubuntu@ip-172-31-86-219:~/devops-batch-3$ git log --oneline
+56b846e (HEAD -> master) added freture2
+9540413 add feature1
+ubuntu@ip-172-31-86-219:~/devops-batch-3$ git checkout -b dev
+Switched to a new branch 'dev'
+ubuntu@ip-172-31-86-219:~/devops-batch-3$ git branch
+* dev
+  master
+ubuntu@ip-172-31-86-219:~/devops-batch-3$ vim feature3.txt
+ubuntu@ip-172-31-86-219:~/devops-batch-3$ git add feature3.txt
+ubuntu@ip-172-31-86-219:~/devops-batch-3$ git commit -m "feature3.txt"
+[dev 41e40be] feature3.txt
+ 1 file changed, 1 insertion(+)
+ create mode 100644 feature3.txt
+ubuntu@ip-172-31-86-219:~/devops-batch-3$ git log --oneline
+41e40be (HEAD -> dev) feature3.txt
+56b846e (master) added freture2
+9540413 add feature1
+ubuntu@ip-172-31-86-219:~/devops-batch-3$ vim feature3.txt
+ubuntu@ip-172-31-86-219:~/devops-batch-3$ git add feature3.txt
+ubuntu@ip-172-31-86-219:~/devops-batch-3$ git commit -m "Dev2 added changes feature in 3"
+[dev c5b009f] Dev2 added changes feature in 3
+ 1 file changed, 2 insertions(+)
+ubuntu@ip-172-31-86-219:~/devops-batch-3$ git log --oneline
+c5b009f (HEAD -> dev) Dev2 added changes feature in 3
+41e40be feature3.txt
+56b846e (master) added freture2
+9540413 add feature1
+ubuntu@ip-172-31-86-219:~/devops-batch-3$ vim feature3.txt
+ubuntu@ip-172-31-86-219:~/devops-batch-3$ git add feature3.txt
+ubuntu@ip-172-31-86-219:~/devops-batch-3$ git commit -m "dev2 added gadbag changes"
+[dev 4d60e88] dev2 added gadbag changes
+ 1 file changed, 2 insertions(+)
+ubuntu@ip-172-31-86-219:~/devops-batch-3$ git log --oneline
+4d60e88 (HEAD -> dev) dev2 added gadbag changes
+c5b009f Dev2 added changes feature in 3
+41e40be feature3.txt
+56b846e (master) added freture2
+9540413 add feature1
+ubuntu@ip-172-31-86-219:~/devops-batch-3$ client_loop: send disconnect: Connection reset by peer
+
+pundh@LAPTOP-T5AVFFFQ MINGW64 ~/Downloads
+$ git log --oneline
+fatal: not a git repository (or any of the parent directories): .git
+
+pundh@LAPTOP-T5AVFFFQ MINGW64 ~/Downloads
+$ ssh -i "my_linux_server.pem" ubuntu@ec2-3-86-212-205.compute-1.amazonaws.com
+Welcome to Ubuntu 22.04.2 LTS (GNU/Linux 5.15.0-1031-aws x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Fri May  5 05:20:35 UTC 2023
+
+  System load:  0.0               Processes:             96
+  Usage of /:   21.9% of 7.57GB   Users logged in:       0
+  Memory usage: 23%               IPv4 address for eth0: 172.31.86.219
+  Swap usage:   0%
+
+ * Ubuntu Pro delivers the most comprehensive open source security and
+   compliance features.
+
+   https://ubuntu.com/aws/pro
+
+ * Introducing Expanded Security Maintenance for Applications.
+   Receive updates to over 25,000 software packages with your
+   Ubuntu Pro subscription. Free for personal use.
+
+     https://ubuntu.com/aws/pro
+
+Expanded Security Maintenance for Applications is not enabled.
+
+0 updates can be applied immediately.
+
+Enable ESM Apps to receive additional future security updates.
+See https://ubuntu.com/esm or run: sudo pro status
+
+
+The list of available updates is more than a week old.
+To check for new updates run: sudo apt update
+
+Last login: Thu May  4 15:55:09 2023 from 171.76.80.48
+To run a command as administrator (user "root"), use "sudo <command>".
+See "man sudo_root" for details.
+
+ubuntu@ip-172-31-86-219:~$ git status
+fatal: not a git repository (or any of the parent directories): .git
+ubuntu@ip-172-31-86-219:~$ ls
+devops-batch-3
+ubuntu@ip-172-31-86-219:~$ cd
+.cache/         .ssh/           devops-batch-3/
+ubuntu@ip-172-31-86-219:~$ cd devops-batch-3/
+ubuntu@ip-172-31-86-219:~/devops-batch-3$ ls
+feature-1.txt  feature2.txt  feature3.txt
+ubuntu@ip-172-31-86-219:~/devops-batch-3$ git status
+On branch dev
+nothing to commit, working tree clean
+ubuntu@ip-172-31-86-219:~/devops-batch-3$ git log --oneline
+4d60e88 (HEAD -> dev) dev2 added gadbag changes
+c5b009f Dev2 added changes feature in 3
+41e40be feature3.txt
+56b846e (master) added freture2
+9540413 add feature1
+ubuntu@ip-172-31-86-219:~/devops-batch-3$ git revert
+usage: git revert [<options>] <commit-ish>...
+   or: git revert <subcommand>
+
+    --quit                end revert or cherry-pick sequence
+    --continue            resume revert or cherry-pick sequence
+    --abort               cancel revert or cherry-pick sequence
+    --skip                skip current commit and continue
+    --cleanup <mode>      how to strip spaces and #comments from message
+    -n, --no-commit       don't automatically commit
+    -e, --edit            edit the commit message
+    -s, --signoff         add a Signed-off-by trailer
+    -m, --mainline <parent-number>
+                          select mainline parent
+    --rerere-autoupdate   update the index with reused conflict resolution if possible
+    --strategy <strategy>
+                          merge strategy
+    -X, --strategy-option <option>
+                          option for merge strategy
+    -S, --gpg-sign[=<key-id>]
+                          GPG sign commit
+
+ubuntu@ip-172-31-86-219:~/devops-batch-3$ git revert 4d60e88
+[dev 7c66d76] Revert "dev2 added gadbag changes"
+ 1 file changed, 2 deletions(-)
+ubuntu@ip-172-31-86-219:~/devops-batch-3$ cat feature3.txt
+This feature from dev1
+
+dev 2 added this feature
+ubuntu@ip-172-31-86-219:~/devops-batch-3$ ls
+feature-1.txt  feature2.txt  feature3.txt
+ubuntu@ip-172-31-86-219:~/devops-batch-3$ cat feature 3.txt
+cat: feature: No such file or directory
+cat: 3.txt: No such file or directory
+ubuntu@ip-172-31-86-219:~/devops-batch-3$ cat feature3.txt
+This feature from dev1
+
+dev 2 added this feature
+ubuntu@ip-172-31-86-219:~/devops-batch-3$ vim feature3.txt
+ubuntu@ip-172-31-86-219:~/devops-batch-3$ add feature3.txt
+Command 'add' not found, did you mean:
+  command 'ldd' from deb libc-bin (2.35-0ubuntu3.1)
+  command 'ad' from deb netatalk (3.1.12~ds-9build1)
+  command 'pdd' from deb pdd (1.5-1)
+  command 'and' from deb and (1.2.2-4.2)
+  command 'dd' from deb coreutils (8.32-4.1ubuntu1)
+  command 'ddd' from deb ddd (1:3.3.12-5.3build1)
+  command 'adr' from deb adr-tools (3.0.0-2)
+  command 'adb' from deb adb (1:10.0.0+r36-9)
+  command 'atd' from deb at (3.2.5-1ubuntu1)
+  command 'aid' from deb id-utils (4.6.28-20200521ss15dab)
+  command 'tdd' from deb devtodo (0.1.20+git20200830.0ad52b0-1)
+  command 'axd' from deb afnix (3.5.0-3)
+Try: sudo apt install <deb name>
+ubuntu@ip-172-31-86-219:~/devops-batch-3$ git add feature3.txt
+ubuntu@ip-172-31-86-219:~/devops-batch-3$ git commit -m "dev 3 gadbad added"
+[dev 73b86e5] dev 3 gadbad added
+ 1 file changed, 3 insertions(+)
+ubuntu@ip-172-31-86-219:~/devops-batch-3$ git log --oneline
+73b86e5 (HEAD -> dev) dev 3 gadbad added
+7c66d76 Revert "dev2 added gadbag changes"
+4d60e88 dev2 added gadbag changes
+c5b009f Dev2 added changes feature in 3
+41e40be feature3.txt
+56b846e (master) added freture2
+9540413 add feature1
+ubuntu@ip-172-31-86-219:~/devops-batch-3$ cat feature3.txt
+This feature from dev1
+
+dev 2 added this feature
+
+
+dev 3 added gadbad
+ubuntu@ip-172-31-86-219:~/devops-batch-3$ git revert 73b86e5
+[dev 692df13] Revert "dev 3 gadbad added"
+ 1 file changed, 3 deletions(-)
+ubuntu@ip-172-31-86-219:~/devops-batch-3$ git log --online
+fatal: unrecognized argument: --online
+ubuntu@ip-172-31-86-219:~/devops-batch-3$ git log --oneline
+692df13 (HEAD -> dev) Revert "dev 3 gadbad added"
+73b86e5 dev 3 gadbad added
+7c66d76 Revert "dev2 added gadbag changes"
+4d60e88 dev2 added gadbag changes
+c5b009f Dev2 added changes feature in 3
+41e40be feature3.txt
+56b846e (master) added freture2
+9540413 add feature1
+ubuntu@ip-172-31-86-219:~/devops-batch-3$ cat feature3.txt
+This feature from dev1
+
+dev 2 added this feature
+ubuntu@ip-172-31-86-219:~/devops-batch-3$ git log --oneline
+692df13 (HEAD -> dev) Revert "dev 3 gadbad added"
+73b86e5 dev 3 gadbad added
+7c66d76 Revert "dev2 added gadbag changes"
+4d60e88 dev2 added gadbag changes
+c5b009f Dev2 added changes feature in 3
+41e40be feature3.txt
+56b846e (master) added freture2
+9540413 add feature1
+ubuntu@ip-172-31-86-219:~/devops-batch-3$ cat feature 3
+cat: feature: No such file or directory
+cat: 3: No such file or directory
+ubuntu@ip-172-31-86-219:~/devops-batch-3$ cat feature3.txt
+This feature from dev1
+
+dev 2 added this feature
+ubuntu@ip-172-31-86-219:~/devops-batch-3$ git reset c5b009f
+ubuntu@ip-172-31-86-219:~/devops-batch-3$ git status
+On branch dev
+nothing to commit, working tree clean
+ubuntu@ip-172-31-86-219:~/devops-batch-3$ git log --oneline
+c5b009f (HEAD -> dev) Dev2 added changes feature in 3
+41e40be feature3.txt
+56b846e (master) added freture2
+9540413 add feature1
+ubuntu@ip-172-31-86-219:~/devops-batch-3$ client_loop: send disconnect: Connection reset by peer
+
+pundh@LAPTOP-T5AVFFFQ MINGW64 ~/Downloads
+$ ssh -i "my_linux_server.pem" ubuntu@ec2-3-86-212-205.compute-1.amazonaws.com
+Welcome to Ubuntu 22.04.2 LTS (GNU/Linux 5.15.0-1031-aws x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Fri May  5 06:29:46 UTC 2023
+
+  System load:  0.0               Processes:             96
+  Usage of /:   21.9% of 7.57GB   Users logged in:       0
+  Memory usage: 22%               IPv4 address for eth0: 172.31.86.219
+  Swap usage:   0%
+
+ * Ubuntu Pro delivers the most comprehensive open source security and
+   compliance features.
+
+   https://ubuntu.com/aws/pro
+
+ * Introducing Expanded Security Maintenance for Applications.
+   Receive updates to over 25,000 software packages with your
+   Ubuntu Pro subscription. Free for personal use.
+
+     https://ubuntu.com/aws/pro
+
+Expanded Security Maintenance for Applications is not enabled.
+
+0 updates can be applied immediately.
+
+Enable ESM Apps to receive additional future security updates.
+See https://ubuntu.com/esm or run: sudo pro status
+
+
+The list of available updates is more than a week old.
+To check for new updates run: sudo apt update
+
+Last login: Fri May  5 05:20:36 2023 from 14.143.246.50
+To run a command as administrator (user "root"), use "sudo <command>".
+See "man sudo_root" for details.
+
+ubuntu@ip-172-31-86-219:~$ ls
+devops-batch-3
+ubuntu@ip-172-31-86-219:~$ cd devops-batch-3/
+ubuntu@ip-172-31-86-219:~/devops-batch-3$ ls
+feature-1.txt  feature2.txt  feature3.txt
+ubuntu@ip-172-31-86-219:~/devops-batch-3$ rm feature-1.txt feature2.txt feature3.txt
+ubuntu@ip-172-31-86-219:~/devops-batch-3$ ls
+ubuntu@ip-172-31-86-219:~/devops-batch-3$ vim feature1.txt
+ubuntu@ip-172-31-86-219:~/devops-batch-3$ git config user.name pundhir1111
+ubuntu@ip-172-31-86-219:~/devops-batch-3$ git config user.email pundhit1111@gmail.com
+ubuntu@ip-172-31-86-219:~/devops-batch-3$ git log
+commit c5b009f8567c7c1fb5d159655c5ebff7d8afa601 (HEAD -> dev)
+Author: pundhir1111@gmail.com <pundhir1111@gmail.com>
+Date:   Thu May 4 16:06:35 2023 +0000
+
+    Dev2 added changes feature in 3
+
+commit 41e40be8e3295bee49c1a91d02bf4f8ab8fa07b7
+Author: pundhir1111@gmail.com <pundhir1111@gmail.com>
+Date:   Thu May 4 16:04:05 2023 +0000
+
+    feature3.txt
+
+commit 56b846eebea5543411f66e31d3836cb000bb5c25 (master)
+Author: pundhir1111@gmail.com <pundhir1111@gmail.com>
+Date:   Thu May 4 16:00:32 2023 +0000
+
+    added freture2
+
+commit 95404134199014bcc7c9512ff993b35ab843a21c
+Author: pundhir1111@gmail.com <pundhir1111@gmail.com>
+Date:   Thu May 4 15:59:45 2023 +0000
+
+    add feature1
+ubuntu@ip-172-31-86-219:~/devops-batch-3$ git add .
+ubuntu@ip-172-31-86-219:~/devops-batch-3$ git commit -m "added feature1"
+[dev 7ba1a86] added feature1
+ 4 files changed, 1 insertion(+), 5 deletions(-)
+ delete mode 100644 feature-1.txt
+ create mode 100644 feature1.txt
+ delete mode 100644 feature2.txt
+ delete mode 100644 feature3.txt
+ubuntu@ip-172-31-86-219:~/devops-batch-3$ vim feature2.txt
+ubuntu@ip-172-31-86-219:~/devops-batch-3$ git add .
+ubuntu@ip-172-31-86-219:~/devops-batch-3$ git commit -m "added feature2"
+[dev e02f599] added feature2
+ 1 file changed, 1 insertion(+)
+ create mode 100644 feature2.txt
+ubuntu@ip-172-31-86-219:~/devops-batch-3$ git log --oneline
+e02f599 (HEAD -> dev) added feature2
+7ba1a86 added feature1
+c5b009f Dev2 added changes feature in 3
+41e40be feature3.txt
+56b846e (master) added freture2
+9540413 add feature1
+ubuntu@ip-172-31-86-219:~/devops-batch-3$ git checkout -b dev
+fatal: A branch named 'dev' already exists.
+ubuntu@ip-172-31-86-219:~/devops-batch-3$ ls -la
+total 20
+drwxrwxr-x 3 ubuntu ubuntu 4096 May  5 06:33 .
+drwxr-x--- 6 ubuntu ubuntu 4096 May  5 06:33 ..
+drwxrwxr-x 8 ubuntu ubuntu 4096 May  5 06:33 .git
+-rw-rw-r-- 1 ubuntu ubuntu   21 May  5 06:30 feature1.txt
+-rw-rw-r-- 1 ubuntu ubuntu   26 May  5 06:33 feature2.txt
+ubuntu@ip-172-31-86-219:~/devops-batch-3$ git push
+fatal: No configured push destination.
+Either specify the URL from the command-line or configure a remote repository using
+
+    git remote add <name> <url>
+
+and then push using the remote name
+
+    git push <name>
+
+ubuntu@ip-172-31-86-219:~/devops-batch-3$ git reset
+ubuntu@ip-172-31-86-219:~/devops-batch-3$ git log
+commit e02f59902ab270d1e8811fd14c44c9e280506518 (HEAD -> dev)
+Author: pundhir1111 <pundhit1111@gmail.com>
+Date:   Fri May 5 06:33:35 2023 +0000
+
+    added feature2
+
+commit 7ba1a86492e586765edc57ae60f2ab062efb5f8d
+Author: pundhir1111 <pundhit1111@gmail.com>
+Date:   Fri May 5 06:32:19 2023 +0000
+
+    added feature1
+
+commit c5b009f8567c7c1fb5d159655c5ebff7d8afa601
+Author: pundhir1111@gmail.com <pundhir1111@gmail.com>
+Date:   Thu May 4 16:06:35 2023 +0000
+
+    Dev2 added changes feature in 3
+
+commit 41e40be8e3295bee49c1a91d02bf4f8ab8fa07b7
+Author: pundhir1111@gmail.com <pundhir1111@gmail.com>
+Date:   Thu May 4 16:04:05 2023 +0000
+
+    feature3.txt
+
+commit 56b846eebea5543411f66e31d3836cb000bb5c25 (master)
+Author: pundhir1111@gmail.com <pundhir1111@gmail.com>
+Date:   Thu May 4 16:00:32 2023 +0000
+
+    added freture2
+
+commit 95404134199014bcc7c9512ff993b35ab843a21c
+Author: pundhir1111@gmail.com <pundhir1111@gmail.com>
+Date:   Thu May 4 15:59:45 2023 +0000
+
+:client_loop: send disconnect: Connection reset by peer
+
+pundh@LAPTOP-T5AVFFFQ MINGW64 ~/Downloads
+$
